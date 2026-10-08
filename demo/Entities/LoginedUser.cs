@@ -8,7 +8,7 @@ namespace demo.Entities
 {
     public class LoginedUser
     {
-        public int UserID { get; set; }
-        public int RoleID { get; set; }
+       public int UserID { get; set; }
+       public int RoleID { get; set; }
     }
 }

@@ -15,7 +15,6 @@ namespace demo
             Order = new HashSet<Order>();
         }
 
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int id { get; set; }
 
         [Required]
@@ -26,7 +25,6 @@ namespace demo
         [StringLength(255)]
         public string name { get; set; }
 
-        [Required]
         [StringLength(255)]
         public string lastName { get; set; }
 

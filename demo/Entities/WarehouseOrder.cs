@@ -9,12 +9,11 @@ namespace demo
     [Table("WarehouseOrder")]
     public partial class WarehouseOrder
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int id { get; set; }
 
-        public int warehouseId { get; set; }
+        public int idWarehouse { get; set; }
 
-        public int orderId { get; set; }
+        public int idOrder { get; set; }
 
         public virtual Order Order { get; set; }
 

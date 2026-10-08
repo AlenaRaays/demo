@@ -15,12 +15,11 @@ namespace demo
             WarehouseOrder = new HashSet<WarehouseOrder>();
         }
 
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int id { get; set; }
 
         [Required]
-        [StringLength(50)]
-        public string OrderNum { get; set; }
+        [StringLength(892)]
+        public string orderNum { get; set; }
 
         public int idUser { get; set; }
 

@@ -21,18 +21,12 @@ namespace demo.Pages
     /// </summary>
     public partial class LoginPage : Page
     {
-        List<User> users = new List<User>();
+        List<User> users = AppConnect.Model1.User.ToList();
         public static LoginedUser loginedUser = new LoginedUser();
 
         public LoginPage()
         {
-
             InitializeComponent();
-
-            foreach (var user in AppConnect.modelS.User)
-            {
-                users.Add(user);
-            }
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

@@ -15,7 +15,6 @@ namespace demo
             User = new HashSet<User>();
         }
 
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int id { get; set; }
 
         [Column("role")]

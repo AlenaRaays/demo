@@ -26,7 +26,7 @@ namespace demo.Pages
         {
             InitializeComponent();
 
-            products = AppConnect.modelS.Product.ToList();
+            products = AppConnect.Model1.Product.ToList();
             ProductList.ItemsSource = products;
 
             if (LoginPage.loginedUser != null)

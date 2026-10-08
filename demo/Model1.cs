@@ -8,7 +8,7 @@ namespace demo
     public partial class Model1 : DbContext
     {
         public Model1()
-            : base("name=ShoeShopModel")
+            : base("name=Model1")
         {
         }
 
@@ -41,6 +41,7 @@ namespace demo
             modelBuilder.Entity<Order>()
                 .HasMany(e => e.WarehouseOrder)
                 .WithRequired(e => e.Order)
+                .HasForeignKey(e => e.idOrder)
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Product>()
@@ -76,6 +77,7 @@ namespace demo
             modelBuilder.Entity<Warehouse>()
                 .HasMany(e => e.WarehouseOrder)
                 .WithRequired(e => e.Warehouse)
+                .HasForeignKey(e => e.idWarehouse)
                 .WillCascadeOnDelete(false);
         }
     }

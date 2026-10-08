@@ -8,6 +8,6 @@ namespace demo
 {
     internal class AppConnect
     {
-        public static Model1 modelS = new Model1();
+        public static Model1 Model1 = new Model1(); 
     }
 }
