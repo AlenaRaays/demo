@@ -6,6 +6,7 @@ namespace demo
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
     using System.IO;
+    using System.Linq;
 
     [Table("Product")]
     public partial class Product
@@ -66,6 +67,41 @@ namespace demo
             }
             set { }
 
+        }
+
+        [NotMapped]
+        public string AmountWord
+        {
+            get
+            {
+                List<Warehouse> warehouse = AppConnect.model1.Warehouse.ToList();
+                int amount = warehouse.Where(x => x.idProduct == id).Count();
+                
+                if (amount > 5)
+                {
+                    return "много";
+                }
+                return "мало";
+
+            }
+            set { }
+        }
+
+        [NotMapped]
+        public string ColorAmo
+        {
+            get
+            {
+                List<Warehouse> warehouse = AppConnect.model1.Warehouse.ToList();
+                int amount = warehouse.Where(x => x.idProduct == id).Count();
+
+                if (amount <= 3)
+                {
+                    return "LightCoral";
+                }
+                return "White";
+            }
+            set { }
         }
     }
 }

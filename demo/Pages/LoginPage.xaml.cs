@@ -21,7 +21,7 @@ namespace demo.Pages
     /// </summary>
     public partial class LoginPage : Page
     {
-        List<User> users = AppConnect.Model1.User.ToList();
+        List<User> users = AppConnect.model1.User.ToList();
         public static LoginedUser loginedUser = new LoginedUser();
 
         public LoginPage()
@@ -40,6 +40,7 @@ namespace demo.Pages
                     loginedUser = new LoginedUser()
                     {
                         UserID = user.id,
+                        UserName = user.name + " " + user.secondName + " " + user.lastName,
                         RoleID = user.idRole
                     };
 

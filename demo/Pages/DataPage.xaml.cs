@@ -26,13 +26,15 @@ namespace demo.Pages
         {
             InitializeComponent();
 
-            products = AppConnect.Model1.Product.ToList();
+            products = AppConnect.model1.Product.ToList();
             ProductList.ItemsSource = products;
 
             if (LoginPage.loginedUser != null)
             {
-
+                loginedName.Text = LoginPage.loginedUser.UserName.ToString();
             }
+
+            
         }
     }
 }

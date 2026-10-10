@@ -4,6 +4,9 @@
              xmlns:local="clr-namespace:demo"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <Style x:Name="PriceDiscountText" x:Key="PriceDiscountText" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="Firebrick"/>
+            <Setter Property="FontSize" Value="22"/>
+        </Style>
     </Application.Resources>
 </Application>

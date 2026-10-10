@@ -5,13 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:demo"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="500" Width="800"
+        MinHeight="500" MinWidth="800"
+        MaxHeight="500" MaxWidth="800">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="11*"/>
         </Grid.RowDefinitions>
-        <Frame Grid.Row="1" Name="FrameMain"/>
+        <Frame Grid.Row="1" Name="FrameMain" NavigationUIVisibility="Hidden"/>
         <Frame Grid.Row="0" Name="TopBar" Background="LightSeaGreen"/>
         <TextBlock Text="чудо обувь" FontSize="25" FontWeight="Bold" Foreground="White" HorizontalAlignment="Left" Margin="30, 0, 0, 0"/>
     </Grid>
