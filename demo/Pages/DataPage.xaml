@@ -22,14 +22,19 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <TextBox Grid.Column="0" VerticalAlignment="Center" Margin="20,0"></TextBox>
+            <TextBox Name="SearchBox" Grid.Column="0" VerticalAlignment="Center" Margin="20,0" TextChanged="SortFilterSearch"></TextBox>
 
             <Grid Grid.Column="1">
-                <ComboBox Name="Sortbox" VerticalAlignment="Center" HorizontalAlignment="Left" Width="100" Margin="30, 0"></ComboBox>
-                <ComboBox  Name="Filterbox" VerticalAlignment="Center" HorizontalAlignment="Right" Width="100" Margin="30, 0"></ComboBox>
+                <ComboBox Name="Sortbox" VerticalAlignment="Center" HorizontalAlignment="Left" Width="100" Margin="30, 0" SelectionChanged="SortFilterSearch"></ComboBox>
+                <ComboBox  Name="Filterbox" VerticalAlignment="Center" HorizontalAlignment="Right" Width="100" Margin="30, 0" SelectionChanged="SortFilterSearch"></ComboBox>
             </Grid>
             <Grid Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">
-                <TextBlock x:Name="loginedName"/>
+                <TextBlock x:Name="loginedName" TextWrapping="Wrap" Visibility="Hidden"/>
+                <TextBlock x:Name="loginLink" Visibility="Hidden">
+                    <Hyperlink Click="loginLink_Click">
+                        Войти
+                    </Hyperlink>
+                </TextBlock>
             </Grid>
         </Grid>
         

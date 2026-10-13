@@ -75,7 +75,7 @@ namespace demo
             get
             {
                 List<Warehouse> warehouse = AppConnect.model1.Warehouse.ToList();
-                int amount = warehouse.Where(x => x.idProduct == id).Count();
+                int amount = warehouse.Where(x => x.idProduct == id).Sum(x => x.allowedAmount);
                 
                 if (amount > 5)
                 {
@@ -93,7 +93,7 @@ namespace demo
             get
             {
                 List<Warehouse> warehouse = AppConnect.model1.Warehouse.ToList();
-                int amount = warehouse.Where(x => x.idProduct == id).Count();
+                int amount = warehouse.Where(x => x.idProduct == id).Sum(x => x.allowedAmount);
 
                 if (amount <= 3)
                 {

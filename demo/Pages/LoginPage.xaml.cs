@@ -31,27 +31,25 @@ namespace demo.Pages
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            if (!String.IsNullOrEmpty(logintxt.Text) || !String.IsNullOrWhiteSpace(logintxt.Text))
+            var user = users.FirstOrDefault(x => x.login == logintxt.Text);
+
+            if (user != null)
             {
-                var user = users.FirstOrDefault(x => x.login == logintxt.Text);
-
-                if (user != null)
+                loginedUser = new LoginedUser()
                 {
-                    loginedUser = new LoginedUser()
-                    {
-                        UserID = user.id,
-                        UserName = user.name + " " + user.secondName + " " + user.lastName,
-                        RoleID = user.idRole
-                    };
+                    UserID = user.id,
+                    UserName = user.name + " " + user.secondName + " " + user.lastName,
+                    RoleID = user.idRole
+                };
 
-                    MessageBox.Show($"Авторизация успешна! Здравствуйте {user.secondName} {user.name}");
-                    MainWindow.MainFrame.Navigate(new Pages.DataPage());
-                }
-                else
-                {
-                    MessageBox.Show("Здравствуйте, неавтаризованный пользователь!");
-                }
-            } 
+                MessageBox.Show($"Авторизация успешна! Здравствуйте {user.secondName} {user.name}");
+                MainWindow.MainFrame.Navigate(new Pages.DataPage());
+            }
+            else
+            {
+                MessageBox.Show("Здравствуйте, неавтаризованный пользователь!");
+                MainWindow.MainFrame.Navigate(new Pages.DataPage());
+            }
         }
     }
 }
