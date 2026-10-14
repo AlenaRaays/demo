@@ -28,9 +28,9 @@
             </Grid.RowDefinitions>
 
             <StackPanel Grid.Column="1" Grid.Row="0">
-                <Label Content="login" Margin="10, 20, 10, 0"/>
-                <TextBox Name="logintxt" Grid.Row="0" Grid.Column="1"  Margin="10, 0, 10, 50"/>
-                <Button Content="login" Margin="10, 0, 10, 0" Click="Button_Click"/>
+                <Label FontFamily="Calibri" Content="login" Margin="10, 20, 10, 0"/>
+                <TextBox FontFamily="Calibri" Name="logintxt" Grid.Row="0" Grid.Column="1"  Margin="10, 0, 10, 50"/>
+                <Button FontFamily="Calibri" Content="login" Margin="10, 0, 10, 0" Click="Button_Click"/>
             </StackPanel>
 
         </Grid>

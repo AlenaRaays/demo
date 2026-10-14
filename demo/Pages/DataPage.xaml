@@ -22,15 +22,15 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <TextBox Name="SearchBox" Grid.Column="0" VerticalAlignment="Center" Margin="20,0" TextChanged="SortFilterSearch"></TextBox>
+            <TextBox Name="SearchBox" Grid.Column="0" VerticalAlignment="Center" Margin="20,0" TextChanged="SortFilterSearch"/>
 
             <Grid Grid.Column="1">
-                <ComboBox Name="Sortbox" VerticalAlignment="Center" HorizontalAlignment="Left" Width="100" Margin="30, 0" SelectionChanged="SortFilterSearch"></ComboBox>
-                <ComboBox  Name="Filterbox" VerticalAlignment="Center" HorizontalAlignment="Right" Width="100" Margin="30, 0" SelectionChanged="SortFilterSearch"></ComboBox>
+                <ComboBox FontFamily="Calibri" Name="Sortbox" VerticalAlignment="Center" HorizontalAlignment="Left" Width="100" Margin="30, 0" SelectionChanged="SortFilterSearch"></ComboBox>
+                <ComboBox FontFamily="Calibri" Name="Filterbox" VerticalAlignment="Center" HorizontalAlignment="Right" Width="100" Margin="30, 0" SelectionChanged="SortFilterSearch" ></ComboBox>
             </Grid>
             <Grid Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">
-                <TextBlock x:Name="loginedName" TextWrapping="Wrap" Visibility="Hidden"/>
-                <TextBlock x:Name="loginLink" Visibility="Hidden">
+                <TextBlock FontFamily="Calibri" x:Name="loginedName" TextWrapping="Wrap" Visibility="Hidden"/>
+                <TextBlock FontFamily="Calibri" x:Name="loginLink" Visibility="Hidden">
                     <Hyperlink Click="loginLink_Click">
                         Войти
                     </Hyperlink>
@@ -53,23 +53,27 @@
 
                             <StackPanel Grid.Column="1" Orientation="Horizontal" Margin="5">
                                 <StackPanel Width="500">
-                                    <TextBlock TextWrapping="Wrap" Text="{Binding producNname}" FontSize="15" FontWeight="DemiBold" HorizontalAlignment="Center"/>
-                                    <TextBlock TextWrapping="Wrap">
+                                    <TextBlock FontFamily="Calibri" TextWrapping="Wrap" FontSize="15" FontWeight="DemiBold" HorizontalAlignment="Center" TextAlignment="Center">
+                                        <Run Text="{Binding Manufacture.manufacturer}"/>
+                                        <Run Text=" | "/>
+                                        <Run Text="{Binding producNname}"/>
+                                    </TextBlock>
+                                    <TextBlock FontFamily="Calibri" TextWrapping="Wrap">
                                         <Run Text="Категория: "/>
                                         <Run Text="{Binding Category.category1}"/>
                                     </TextBlock>
-                                    <TextBlock TextWrapping="Wrap" FontSize="12">
+                                    <TextBlock FontFamily="Calibri" TextWrapping="Wrap" FontSize="12">
                                         <Run Text="Количество: "/>
                                         <Run Text="{Binding AmountWord}"/>
                                     </TextBlock>
-                                    <TextBlock TextWrapping="Wrap" FontSize="10">
+                                    <TextBlock FontFamily="Calibri" TextWrapping="Wrap" FontSize="10">
                                         <Run Text="Состав: "/>
                                         <Run Text="{Binding consists}"/>
                                     </TextBlock>
                                 </StackPanel>
                             </StackPanel>
                             <Grid  Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100">
-                                <TextBlock Text="{Binding price}" FontSize="20"/>
+                                <TextBlock FontFamily="Calibri" Text="{Binding price}" FontSize="20"/>
                             </Grid>
                         </Grid>
                     </Border>

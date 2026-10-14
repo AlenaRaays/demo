@@ -37,7 +37,7 @@ namespace demo.Pages
                 loginedName.Visibility = Visibility.Visible;
                 loginedName.Text = LoginPage.loginedUser.UserName.ToString();
 
-                Filterbox.Items.Add("Сортировать");
+                Filterbox.Items.Add("Все категории");
                 foreach (var item in categories)
                 {
                     Filterbox.Items.Add(item.category1);
@@ -64,15 +64,41 @@ namespace demo.Pages
             MainWindow.MainFrame.GoBack();
         }
 
-        public List<Product> SortFilterSearch()
+        void SortFilterSearch(object sender, RoutedEventArgs e)
         {
-            //if (Sortbox.SelectedIndex != 0)
-            //{
-            //    products = products.OrderBy(products.);
-            //}
-            
+            List<Product> productsF = AppConnect.model1.Product.ToList();
 
-            return products;
+            if (Sortbox.SelectedIndex > 0)
+            {
+                switch(Sortbox.SelectedIndex)
+                {
+                    case 1:
+                        productsF = productsF.OrderBy(x => x.price).ToList();
+                        break;
+                    case 2:
+                        productsF = productsF.OrderByDescending(x => x.price).ToList();
+                        break;
+                }
+            }
+
+            if (Filterbox.SelectedIndex > 0)
+            {
+                productsF = productsF.Where(x => x.idCategory == Sortbox.SelectedIndex).ToList();
+            }
+
+            if (!String.IsNullOrEmpty(SearchBox.Text) || !String.IsNullOrWhiteSpace(SearchBox.Text))
+            {
+                productsF = productsF.Where(x => x.producNname.Contains(SearchBox.Text) || x.description.Contains(SearchBox.Text)).ToList();
+            }
+
+            if (productsF!= null)
+            {
+                ProductList.ItemsSource = productsF.ToList();
+            }
+            else
+            {
+                ProductList.ItemsSource = products;
+            }
         }
     }
 }

@@ -97,9 +97,9 @@ namespace demo
 
                 if (amount <= 3)
                 {
-                    return "LightCoral";
+                    return "#ff8080";
                 }
-                return "White";
+                return "#ffffff";
             }
             set { }
         }

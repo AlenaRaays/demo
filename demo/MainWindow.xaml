@@ -14,7 +14,7 @@
             <RowDefinition Height="11*"/>
         </Grid.RowDefinitions>
         <Frame Grid.Row="1" Name="FrameMain" NavigationUIVisibility="Hidden"/>
-        <Frame Grid.Row="0" Name="TopBar" Background="LightSeaGreen"/>
-        <TextBlock Text="чудо обувь" FontSize="25" FontWeight="Bold" Foreground="White" HorizontalAlignment="Left" Margin="30, 0, 0, 0"/>
+        <Frame Grid.Row="0" Name="TopBar" Background="#70b2af"/>
+        <TextBlock Text="чудо обувь" FontSize="25" FontWeight="Bold" Foreground="White" HorizontalAlignment="Left" Margin="30, 0, 0, 0" FontFamily="Calibri"/>
     </Grid>
 </Window>
