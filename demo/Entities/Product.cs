@@ -103,5 +103,15 @@ namespace demo
             }
             set { }
         }
+
+        [NotMapped]
+        public string SelectedImage
+        {
+            get
+            {
+
+            }
+            set { }
+        }
     }
 }

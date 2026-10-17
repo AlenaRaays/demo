@@ -39,7 +39,7 @@
         </Grid>
         
         
-        <ListView Grid.Row="1" Name="ProductList">
+        <ListView Grid.Row="1" Name="ProductList" MouseDoubleClick="ProductList_MouseDoubleClick">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <Border Background="{Binding ColorAmo}">

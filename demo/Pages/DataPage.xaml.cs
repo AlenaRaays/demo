@@ -21,6 +21,8 @@ namespace demo.Pages
     /// </summary>
     public partial class DataPage : Page
     {
+        public static Product selected PR
+
         List<Product> products;
         List<Category> categories;
         public DataPage()
@@ -83,7 +85,7 @@ namespace demo.Pages
 
             if (Filterbox.SelectedIndex > 0)
             {
-                productsF = productsF.Where(x => x.idCategory == Sortbox.SelectedIndex).ToList();
+                productsF = productsF.Where(x => x.Category.id == Filterbox.SelectedIndex).ToList();
             }
 
             if (!String.IsNullOrEmpty(SearchBox.Text) || !String.IsNullOrWhiteSpace(SearchBox.Text))
@@ -99,6 +101,14 @@ namespace demo.Pages
             {
                 ProductList.ItemsSource = products;
             }
+        }
+
+        private void ProductList_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            
+
+
+            MainWindow.MainFrame.Navigate(new Pages.ProductData());
         }
     }
 }
