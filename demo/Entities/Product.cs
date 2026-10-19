@@ -7,6 +7,7 @@ namespace demo
     using System.Data.Entity.Spatial;
     using System.IO;
     using System.Linq;
+    using System.Windows;
 
     [Table("Product")]
     public partial class Product
@@ -105,11 +106,27 @@ namespace demo
         }
 
         [NotMapped]
-        public string SelectedImage
+        public bool CrossedPrice
         {
             get
             {
+                List<Order> orders = AppConnect.model1.Order.ToList();
+                List<Warehouse> warehouses = AppConnect.model1.Warehouse.ToList();
+                List<WarehouseOrder> warehouseOrders = AppConnect.model1.WarehouseOrder.ToList();
 
+                var query = from WarehouseOrder w_order in warehouseOrders
+                            join Order ord in orders on w_order.idOrder equals ord.id
+                            join Warehouse ware in warehouses on w_order.idWarehouse equals ware.id
+                            select new { ware.idProduct, ord.date };
+
+                foreach (var item  in query)
+                {
+                    if (DateTime.Now.Month - item.date.Month > 1)
+                    {
+                        return true;
+                    }
+                }
+                return false;
             }
             set { }
         }

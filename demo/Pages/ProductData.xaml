@@ -11,16 +11,23 @@
     <Grid Background="#D2F6E7">
         <Grid Name="ProductGrid" Margin="100, 50" Background="White">
             <Grid.RowDefinitions>
-                <RowDefinition/>
+                <RowDefinition Height="1.5*"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
-                <ColumnDefinition/>
+                <ColumnDefinition Width="1.5*"/>
             </Grid.ColumnDefinitions>
 
-            <Image Margin="50, 25" Source="{Binding }"></Image>
-            
+            <Image Margin="50, 25" Source="{Binding CurrentImage}"></Image>
+            <StackPanel Grid.Column="1">
+                <TextBlock Text="{Binding producNname}" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="15" FontWeight="Bold" Margin="5" TextWrapping="Wrap" TextAlignment="Center"></TextBlock>
+                <TextBlock Text="{Binding Manufacture.manufacturer}" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="5" FontSize="13" FontWeight="Medium"/>
+                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Top" Margin="5">
+                    <Run Text="Категория: "/>
+                    <Run Text="{Binding Category.category1}"/>
+                </TextBlock>
+            </StackPanel>
         </Grid>
     </Grid>
 </Page>

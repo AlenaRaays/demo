@@ -21,8 +21,6 @@ namespace demo.Pages
     /// </summary>
     public partial class DataPage : Page
     {
-        public static Product selected PR
-
         List<Product> products;
         List<Category> categories;
         public DataPage()
@@ -105,10 +103,7 @@ namespace demo.Pages
 
         private void ProductList_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            
-
-
-            MainWindow.MainFrame.Navigate(new Pages.ProductData());
+            MainWindow.MainFrame.Navigate(new Pages.ProductData(ProductList.SelectedItem as Product));
         }
     }
 }

@@ -73,7 +73,18 @@
                                 </StackPanel>
                             </StackPanel>
                             <Grid  Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100">
-                                <TextBlock FontFamily="Calibri" Text="{Binding price}" FontSize="20"/>
+                                <TextBlock FontFamily="Calibri" Text="{Binding price}" FontSize="20">
+                                    <TextBlock.Style>
+                                        <Style TargetType="TextBlock">
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding CrossedPrice}" Value="True">
+                                                    <Setter Property="Foreground" Value="Red"/>
+                                                    <Setter Property="TextDecorations" Value="Strikethrough"/>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </TextBlock.Style>
+                                </TextBlock>
                             </Grid>
                         </Grid>
                     </Border>

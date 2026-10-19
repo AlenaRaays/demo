@@ -25,5 +25,22 @@ namespace demo
             MainFrame = FrameMain;
             MainFrame.Navigate(new Pages.LoginPage());
         }
+
+        private void Back_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                MainFrame.GoBack();
+            }
+            catch
+            {
+                MainFrame.NavigationFailed += MainFrame_NavigationFailed;
+            }
+        }
+
+        private void MainFrame_NavigationFailed(object sender, NavigationFailedEventArgs e)
+        {
+            return;
+        }
     }
 }

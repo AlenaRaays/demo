@@ -15,15 +15,13 @@ using System.Windows.Shapes;
 
 namespace demo.Pages
 {
-    /// <summary>
-    /// Логика взаимодействия для ProductData.xaml
-    /// </summary>
     public partial class ProductData : Page
     {
-        public ProductData()
+        public List<Product> Products;
+        public ProductData(Product selectedproduct)
         {
             InitializeComponent();
-
+            DataContext = selectedproduct;
         }
     }
 }

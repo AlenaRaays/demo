@@ -15,6 +15,7 @@
         </Grid.RowDefinitions>
         <Frame Grid.Row="1" Name="FrameMain" NavigationUIVisibility="Hidden"/>
         <Frame Grid.Row="0" Name="TopBar" Background="#70b2af"/>
-        <TextBlock Text="ЧУДО ОБУВЬ" FontSize="25" FontWeight="Bold" Foreground="White" HorizontalAlignment="Left" Margin="30,0,0,0" FontFamily="Calibri" VerticalAlignment="Center"/>
+        <TextBlock Text="ЧУДО ОБУВЬ" FontSize="25" FontWeight="Bold" Foreground="White" HorizontalAlignment="Left" Margin="10,0,0,0" FontFamily="Calibri" VerticalAlignment="Center"/>
+        <Button x:Name="Back" Content="Назад" HorizontalAlignment="Right" Padding="3" Background="#70b2af" Foreground="White" BorderBrush="#70b2af" Click="Back_Click"/>
     </Grid>
 </Window>
